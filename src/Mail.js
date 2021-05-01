@@ -19,14 +19,17 @@ import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 
 import { useSelector } from "react-redux";
 import { selectOpenMail } from "./features/mailSlice";
+import { useHistory } from "react-router-dom";
 
 function Mail() {
+  const history = useHistory();
+
   const selectedMail = useSelector(selectOpenMail);
   return (
     <div className="mail">
       <div className="mail__tools">
         <div className="mail__toolsLeft">
-          <IconButton>
+          <IconButton onClick={() => history.push("/")}>
             <ArrowBackIcon />
           </IconButton>
           <IconButton>
